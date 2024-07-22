@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+    <link
+      rel="shortcut icon"
+      href="./images/logo (1).png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./CSS/all.min.css" />
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/animate.css" />
+  </head>
+  <body class="text-light ps-5">
+    <!-- reload -->
+    <div class="loading position-fixed top-0 start-0 bg-black w-100 min-vh-100">
+      <div
+        class="d-flex justify-content-center align-items-center w-100 min-vh-100"
+      >
+        <span class="loading-spinner"></span>
+      </div>
+    </div>
+    <!-- nav -->
+    <nav>
+      <div
+        class="d-flex position-fixed top-0 slide-nav min-vh-100 bg-black nav-bg nav-side-bar"
+      >
+        <div
+          class="nav-content flex-column d-flex justify-content-between text-start text-white bg-black px-4 py-4 flex-grow-1"
+        >
+          <div class="nav-content-list">
+            <ul class="list-unstyled nav-content-ul">
+              <li
+                class="cursor-pointer py-2 px-1 nav-content-list-item nav-list-item"
+              >
+                <a
+                  id="now_playing"
+                  class="text-decoration-none mt-3 w-100 d-block"
+                  >Now Playing</a
+                >
+              </li>
+              <li
+                class="cursor-pointer py-2 px-1 nav-content-list-item nav-list-item"
+              >
+                <a id="popular" class="text-decoration-none mt-3 w-100 d-block"
+                  >Popular</a
+                >
+              </li>
+              <li
+                class="cursor-pointer py-2 px-1 nav-content-list-item nav-list-item"
+              >
+                <a
+                  id="top_rated"
+                  class="text-decoration-none mt-3 w-100 d-block"
+                  >Top Rated</a
+                >
+              </li>
+              <li
+                class="cursor-pointer py-2 px-1 nav-content-list-item nav-list-item"
+              >
+                <a id="trending" class="text-decoration-none mt-3 w-100 d-block"
+                  >Trending</a
+                >
+              </li>
+              <li
+                class="cursor-pointer py-2 px-1 nav-content-list-item nav-list-item"
+              >
+                <a id="upcoming" class="text-decoration-none mt-3 w-100 d-block"
+                  >Upcoming</a
+                >
+              </li>
+              <li class="cursor-pointer py-2 px-1 nav-list-item">
+                <a
+                  href="#ContactSection"
+                  id="navContact"
+                  class="text-decoration-none mt-3 w-100 d-block"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="nav-content-links">
+            <div class="nav-social-icon">
+              <a href="#" class="link-light link-underline-opacity-0">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="link-light link-underline-opacity-0">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+              <a href="#" class="link-light link-underline-opacity-0">
+                <i class="fa-solid fa-globe"></i>
+              </a>
+            </div>
+            <p>Copyright Â© 2019 All Rights Reserved</p>
+          </div>
+        </div>
+        <div
+          class="nav-show-bar d-flex flex-column align-content-center text-center justify-content-between py-4 px-3 bg-white"
+        >
+          <a href="./index.html" class="nav-logo text-decoration-none">
+            <img src="./images/logo (1).png" alt="" class="" />
+          </a>
+          <i
+            class="fa-solid fa-align-justify fa-xl nav-show-bar-icon text-black cursor-pointer change-nav"
+          ></i>
+          <div
+            class="d-flex justify-content-between align-items-center text-center gap-0 flex-column"
+          >
+            <a href="#home" class="link-dark text-decoration-none">
+              <i class="fa-solid fa-globe"></i>
+            </a>
+            <a href="#home" class="link-dark text-decoration-none">
+              <i class="fa-solid fa-share-nodes"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="pt-5">
+      <div class="container">
+        <div class="row search-bar g-3 pb-4">
+          <div class="col-10 col-lg-6 mx-auto">
+            <div class="search search-name">
+              <input
+                type="search"
+                class="form-control border-2 rounded-5 form-changes"
+                id="searchName"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pt-5 ps-3">
+      <div class="container">
+        <div class="row g-4" id="htmlContainer"></div>
+      </div>
+    </section>
+
+    <section id="ContactSection">
+      <div
+        class="m-n min-vh-100 d-flex justify-content-center align-items-center"
+      >
+        <div class="container">
+          <div class="row m-auto">
+            <h2>Contact Us</h2>
+          </div>
+          <form action="">
+            <div class="row m-auto">
+              <div class="col-md-6">
+                <div class="form-inner">
+                  <input
+                    type="text"
+                    class="form-control rounded-0 form-changes mt-3"
+                    id="userName"
+                    placeholder="Enter your name"
+                  />
+                  <p
+                    class="mt-0 ms-2 d-none text-danger fs-6 position-absolute top-100 start-0"
+                  >
+                    Special characters and numbers not allowed
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-inner">
+                  <input
+                    type="email"
+                    class="form-control form-changes mt-3"
+                    id="userEmail"
+                    placeholder="Enter your email"
+                  />
+                  <p
+                    class="mt-0 ms-2 d-none text-danger fs-6 position-absolute top-100 start-0"
+                  >
+                    Email not valid *exemple@yyy.zzz
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-inner">
+                  <input
+                    type="tel"
+                    class="form-control form-changes mt-4"
+                    id="userPhone"
+                    placeholder="Enter your Phone"
+                  />
+                  <p
+                    class="mt-0 ms-2 d-none text-danger fs-6 position-absolute top-100 start-0"
+                  >
+                    Enter valid Phone Number
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-inner">
+                  <input
+                    type="number"
+                    class="form-control form-changes mt-4"
+                    id="userAge"
+                    placeholder="Enter your Age"
+                  />
+                  <p
+                    class="mt-0 ms-2 d-none text-danger fs-6 position-absolute top-100 start-0"
+                  >
+                    Enter valid age
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-inner">
+                  <input
+                    type="password"
+                    class="form-control form-changes mt-4"
+                    id="userPassword"
+                    placeholder="Enter your password"
+                  />
+                  <p
+                    class="mt-0 ms-2 d-none text-danger fs-6 position-absolute top-100 start-0"
+                  >
+                    Enter valid password *Minimum eight characters, at least one
+                    letter and one number:*
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-inner">
+                  <input
+                    type="password"
+                    class="form-control form-changes mt-4"
+                    id="userRePassword"
+                    placeholder="Re-password"
+                  />
+                  <p
+                    class="mt-0 ms-2 d-none text-danger fs-6 position-absolute top-100 start-0"
+                  >
+                    No Match, Enter valid re-password
+                  </p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center">
+                  <button
+                    type="button"
+                    class="mt-4 btn btn-outline-danger disabled login"
+                    id="signup"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div id="back-to-top" class="active">
+      <a href="#" class="text-decoration-none link-underline-opacity-0">
+        <i class="fa-solid fa-arrow-up-long"></i>
+      </a>
+    </div>
+
+    <script src="./JS/bootstrap.bundle.min.js"></script>
+    <script src="./JS/jquery-3.7.1.min.js"></script>
+    <script src="./JS/index.js" type="module"></script>
+  </body>
+</html>
